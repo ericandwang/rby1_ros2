@@ -79,6 +79,9 @@ hardware_interface::CallbackReturn RBY1HardwareInterface::on_activate(const rclc
     joint_positions_[i] = state.position(i);
   }
   joint_commands_ = joint_positions_; 
+
+  joint_velocities_.resize(info_.joints.size(), 0.0);
+  prev_joint_positions_ = joint_positions_;
   
   robot_->StartStateUpdate(
     [this](const auto& state) {
@@ -102,8 +105,16 @@ std::vector<hardware_interface::StateInterface> RBY1HardwareInterface::export_st
 {
   std::vector<hardware_interface::StateInterface> state_interfaces;
   for (size_t i = 0; i < info_.joints.size(); ++i) {
-    state_interfaces.emplace_back(hardware_interface::StateInterface(
-      info_.joints[i].name, hardware_interface::HW_IF_POSITION, &joint_positions_[i]));
+    const auto& joint = info_.joints[i];
+    if (joint.name == "right_wheel" || joint.name == "left_wheel") {
+      state_interfaces.emplace_back(hardware_interface::StateInterface(
+        joint.name, hardware_interface::HW_IF_POSITION, &joint_positions_[i]));
+      state_interfaces.emplace_back(hardware_interface::StateInterface(
+        joint.name, hardware_interface::HW_IF_VELOCITY, &joint_velocities_[i]));
+    } else {
+      state_interfaces.emplace_back(hardware_interface::StateInterface(
+        joint.name, hardware_interface::HW_IF_POSITION, &joint_positions_[i]));
+    }
   }
   return state_interfaces;
 }
@@ -112,13 +123,19 @@ std::vector<hardware_interface::CommandInterface> RBY1HardwareInterface::export_
 {
   std::vector<hardware_interface::CommandInterface> command_interfaces;
   for (size_t i = 0; i < info_.joints.size(); ++i) {
-    command_interfaces.emplace_back(hardware_interface::CommandInterface(
-      info_.joints[i].name, hardware_interface::HW_IF_POSITION, &joint_commands_[i]));
+    const auto& joint = info_.joints[i];
+    if (joint.name == "right_wheel" || joint.name == "left_wheel") {
+      command_interfaces.emplace_back(hardware_interface::CommandInterface(
+        joint.name, hardware_interface::HW_IF_VELOCITY, &joint_commands_[i]));
+    } else {
+      command_interfaces.emplace_back(hardware_interface::CommandInterface(
+        joint.name, hardware_interface::HW_IF_POSITION, &joint_commands_[i]));
+    }
   }
   return command_interfaces;
 }
 
-hardware_interface::return_type RBY1HardwareInterface::read(const rclcpp::Time &, const rclcpp::Duration &)
+hardware_interface::return_type RBY1HardwareInterface::read(const rclcpp::Time &, const rclcpp::Duration& period)
 {
   rb::RobotState<rb::y1_model::A> state_copy;
   {
@@ -131,6 +148,8 @@ hardware_interface::return_type RBY1HardwareInterface::read(const rclcpp::Time &
     return hardware_interface::return_type::ERROR;
 
   for (size_t i = 0; i < joint_positions_.size(); ++i) {
+    joint_velocities_[i] = (state_copy.position(i) - prev_joint_positions_[i]) / period.seconds();
+    prev_joint_positions_[i] = state_copy.position(i);
     joint_positions_[i] = state_copy.position(i);
   }
 
@@ -164,8 +183,8 @@ hardware_interface::return_type RBY1HardwareInterface::write(const rclcpp::Time&
 
   for (size_t i = 0; i < joint_names_.size(); ++i) {
     const auto& name = joint_names_[i];
-    if (name == "right_wheel") right_wheel(0, 0) = -joint_commands_[i];
-    else if (name == "left_wheel") left_wheel(0, 0) = -joint_commands_[i];
+    if (name == "right_wheel") right_wheel(0, 0) = joint_commands_[i];
+    else if (name == "left_wheel") left_wheel(0, 0) = joint_commands_[i];
 
     else if (name == "torso_0") torso[0] = joint_commands_[i];
     else if (name == "torso_1") torso[1] = joint_commands_[i];
@@ -239,18 +258,21 @@ hardware_interface::return_type RBY1HardwareInterface::write(const rclcpp::Time&
                 .SetHeadCommand(rb::JointPositionCommandBuilder()
                   .SetCommandHeader(rb::CommandHeaderBuilder().SetControlHoldTime(0.3))
                   .SetMinimumTime(0.03).SetPosition(head))
-                .SetMobilityCommand(/*
+                .SetMobilityCommand(
                   rb::MobilityCommandBuilder()
                   .SetCommand(rb::JointVelocityCommandBuilder()
                     .SetVelocity(wheel_velocity)
                     .SetMinimumTime(0.5)
                     .SetAccelerationLimit(wheel_acceleration_limit))
-                  */
+                  
+                  /*
                   rb::MobilityCommandBuilder()
                   .SetCommand(rb::SE2VelocityCommandBuilder()
                     .SetVelocity(linear_velocity, angular_velocity)
                     .SetAccelerationLimit(linear_acceleration_limit, angular_acceleration_limit)
-                    .SetMinimumTime(0.5)))
+                    .SetMinimumTime(0.5))
+                  */
+                  )
     )
   );
 

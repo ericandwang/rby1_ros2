@@ -23,7 +23,7 @@ controller_manager:
       type: joint_trajectory_controller/JointTrajectoryController
       
     rby1_base_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
+      type: diff_drive_controller/DiffDriveController
 
     rby1_wholebody_controller:
       type: joint_trajectory_controller/JointTrajectoryController
@@ -113,14 +113,23 @@ rby1_head_controller:
     
 rby1_base_controller:
   ros__parameters:
-    joints:
-      - right_wheel
-      - left_wheel
-    command_interfaces:
-      - position
-    state_interfaces:
-      - position
-    hold_joints: false
+    # --- Required Parameters ---
+    left_wheel_names: ["left_wheel"]
+    right_wheel_names: ["right_wheel"]
+    wheel_separation: 0.53       # Measured between wheel centers
+    wheel_radius: 0.1           # Actual wheel radius
+    odom_frame_id: odom
+    base_frame_id: base
+    
+    # --- Interface Configuration ---
+    command_interfaces: [velocity]  # Diff drive requires velocity commands
+    state_interfaces: [position, velocity]  # Position feedback for odometry
+    
+    # --- Optional Parameters ---
+    #publish_rate: 50.0           # Odometry publishing rate
+    #enable_odom_tf: true         # Publish odom->base_link transform
+    #cmd_vel_timeout: 0.5         # Stop if no commands received (seconds)
+    #open_loop: false             # Use feedback from wheels
 
 rby1_wholebody_controller:
   ros__parameters:

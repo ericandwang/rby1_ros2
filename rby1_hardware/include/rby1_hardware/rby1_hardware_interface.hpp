@@ -43,6 +43,8 @@ private:
   std::vector<double> joint_positions_;
   std::vector<double> joint_commands_;
   std::vector<std::string> joint_names_;
+  std::vector<double> joint_velocities_;
+  std::vector<double> prev_joint_positions_;
 
   rclcpp::Node::SharedPtr node_;
   rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_state_pub_;
