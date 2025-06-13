@@ -148,9 +148,9 @@ hardware_interface::return_type RBY1HardwareInterface::read(const rclcpp::Time &
     return hardware_interface::return_type::ERROR;
 
   for (size_t i = 0; i < joint_positions_.size(); ++i) {
-    joint_velocities_[i] = (state_copy.position(i) - prev_joint_positions_[i]) / period.seconds();
-    prev_joint_positions_[i] = state_copy.position(i);
-    joint_positions_[i] = state_copy.position(i);
+    joint_velocities_[i] = -(state_copy.position(i) - prev_joint_positions_[i]) / period.seconds();
+    prev_joint_positions_[i] = -state_copy.position(i);
+    joint_positions_[i] = -state_copy.position(i);
   }
 
   sensor_msgs::msg::JointState js_msg;
@@ -183,8 +183,8 @@ hardware_interface::return_type RBY1HardwareInterface::write(const rclcpp::Time&
 
   for (size_t i = 0; i < joint_names_.size(); ++i) {
     const auto& name = joint_names_[i];
-    if (name == "right_wheel") right_wheel(0, 0) = joint_commands_[i];
-    else if (name == "left_wheel") left_wheel(0, 0) = joint_commands_[i];
+    if (name == "right_wheel") right_wheel(0, 0) = -joint_commands_[i];
+    else if (name == "left_wheel") left_wheel(0, 0) = -joint_commands_[i];
 
     else if (name == "torso_0") torso[0] = joint_commands_[i];
     else if (name == "torso_1") torso[1] = joint_commands_[i];

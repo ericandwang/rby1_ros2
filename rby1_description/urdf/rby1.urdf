@@ -674,6 +674,60 @@
         </visual>
     </link>
 
+    <!-- Right LiDAR, 270° FOV from –135° to +135° -->
+    <link name="lidar_right_link">
+    <!-- (unchanged inertial/collision/visual) -->
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.125"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.0508" length="0.055"/>
+        </geometry>
+        </collision>
+
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.0508" length="0.055"/>
+        </geometry>
+        <material name="LightBlue">
+            <color rgba="0.11 0.37 0.56 1.0"/>
+        </material>
+        </visual>
+    </link>
+
+    <!-- Left LiDAR, 270° FOV from –135° to +135° -->
+    <link name="lidar_left_link">
+    <!-- (unchanged inertial/collision/visual) -->
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.125"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.0508" length="0.055"/>
+        </geometry>
+        </collision>
+
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.0508" length="0.055"/>
+        </geometry>
+        <material name="LightBlue">
+            <color rgba="0.11 0.37 0.56 1.0"/>
+        </material>
+        </visual>
+    </link>
+
 
     <!-- =========================
          Joints
@@ -966,6 +1020,18 @@
         <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         <axis xyz="0 1 0"/>
         <limit effort="1000" velocity="3.14" lower="-0.35" upper="1.57"/>
+    </joint>
+
+    <joint name="lidar_right_joint" type="fixed">
+        <parent link="base"/>
+        <child link="lidar_right_link"/>
+        <origin xyz="0.228 -0.18 0.23" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="lidar_left_joint" type="fixed">
+        <parent link="base"/>
+        <child link="lidar_left_link"/>
+        <origin xyz="0.228 0.18 0.23" rpy="0 0 0"/>
     </joint>
 
 </robot>
