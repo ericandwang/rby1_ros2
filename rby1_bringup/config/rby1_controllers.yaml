@@ -120,6 +120,25 @@ rby1_base_controller:
     wheel_radius: 0.1           # Actual wheel radius
     odom_frame_id: odom
     base_frame_id: base
+
+    # --- Velocity and Acceleration Limits ---
+    linear:
+      x:
+        has_velocity_limits: true
+        max_velocity: 0.35       # meters per second
+        min_velocity: -0.35      # meters per second
+    #    has_acceleration_limits: true
+    #    max_acceleration: 0.2   # meters per second squared
+    #    min_acceleration: -0.2  # meters per second squared
+
+    angular:
+      z:
+        has_velocity_limits: true
+        max_velocity: 0.7       # radians per second
+        min_velocity: -0.7      # radians per second
+    #    has_acceleration_limits: true
+    #    max_acceleration: 1.5   # radians per second squared
+    #    min_acceleration: -1.5  # radians per second squared
     
     # --- Interface Configuration ---
     command_interfaces: [velocity]  # Diff drive requires velocity commands
