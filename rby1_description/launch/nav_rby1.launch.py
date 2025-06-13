@@ -70,7 +70,7 @@ def generate_launch_description():
     ###################
     use_sim_time = LaunchConfiguration("use_sim_time")
     #use_rviz = LaunchConfiguration("use_rviz")
-    use_localization = LaunchConfiguration("use_localization") 
+    use_localization = LaunchConfiguration("use_localization")
     ###################
 
 
