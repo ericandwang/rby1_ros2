@@ -1,0 +1,17 @@
+#twist_mux:
+#  ros__parameters:
+#    topics:
+#      navigation:
+#        topic   : nav_input
+#        timeout : 0.5
+#        priority: 5
+#      keyboard:        
+#      	topic   : key_input
+#        timeout : 0.5
+#      	priority: 1 
+
+topics:
+  - name: keyboard
+    topic: key_vel_unstamped
+    timeout: 0.5
+    priority: 10

@@ -65,7 +65,7 @@ def generate_launch_description():
     package_name = 'rby1_description'
     pkg_share = FindPackageShare(package='rby1_description').find('rby1_description')
     #default_rviz_config_path = os.path.join(pkg_share, 'rviz', 'rby2.rviz')
-    #twist_mux_params = os.path.join(pkg_share,'config','twist_mux.yaml')
+    twist_mux_params = os.path.join(pkg_share,'config','twist_mux.yaml')
 
     ###################
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -77,16 +77,156 @@ def generate_launch_description():
 
 
     # Note: make sure mode in config file is set to desired behavior: mapping or localization (must provide map)
+    #slam_params = os.path.join(get_package_share_directory(package_name),'config','mapper_params_online_async.yaml')
+    #slam_launch = IncludeLaunchDescription(
+    #            PythonLaunchDescriptionSource([os.path.join(
+    #                get_package_share_directory(package_name),'launch','online_async_launch.py'
+    #            )]), launch_arguments={'use_sim_time': use_sim_time,'slam_params_file': slam_params}.items()
+    #)
+
     slam_params = os.path.join(get_package_share_directory(package_name),'config','mapper_params_online_async.yaml')
-    slam_node = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(package_name),'launch','online_async_launch.py'
-                )]), launch_arguments={'use_sim_time': use_sim_time,'slam_params_file': slam_params}.items()
+    slam_node = Node(
+        parameters=[
+          slam_params,
+          {'use_sim_time': use_sim_time}
+        ],
+        package='slam_toolbox',
+        executable='async_slam_toolbox_node',
+        name='slam_toolbox',
+        output='screen'
     )
+
+
+
+    nav2_params = os.path.join(get_package_share_directory(package_name),'config','nav2_params.yaml')
+    nav2_node = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','navigation_launch.py'
+                )]), launch_arguments={'use_sim_time': use_sim_time,'params_file': nav2_params}.items()
+    )
+
+    nav2_bringup = IncludeLaunchDescription(
+                   PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('nav2_bringup'), 'launch', 'navigation_launch.py'
+                   )]), launch_arguments={'use_sim_time': use_sim_time}.items()
+    )
+
+
+    # keep just in case, maybe optional in the future
+    # relay_cmd_vel = Node(
+    #     name="relay_cmd_vel",
+    #     package="topic_tools",
+    #     executable="relay",
+    #     parameters=[
+    #         {
+    #             "input_topic": "/cmd_vel",
+    #             "output_topic": "/diff_cont/cmd_vel_unstamped",
+    #         }
+    #     ],
+    #     output="screen",
+    # )  
+
+    #stamper = Node(
+    #    package='twist_stamper',
+    #    executable='twist_stamper',
+    #    remappings=[
+    #        ('/cmd_vel_in', '/cmd_vel_nav'),  # Input TwistStamped topic 1
+    #        ('/cmd_vel_out', '/rby1_base_controller/cmd_vel')  # Output Twist topic 1
+    #    ]
+    #)
+
+    teleop = Node(
+        package='pynput_teleop_twist_keyboard',
+        executable='pynput_teleop_twist_keyboard',
+        name='pynput_teleop_twist_keyboard',
+        remappings=[
+            ('/cmd_vel', '/cmd_vel_key_stamped')
+        ],
+        output='screen'
+    )
+
+    unstamper = Node(
+        package='twist_stamper',
+        executable='twist_unstamper',
+        remappings=[
+            ('/cmd_vel_in', '/cmd_vel_key_stamped'),
+            ('/cmd_vel_out', '/cmd_vel_key')
+        ],
+        output='screen'
+    )
+
+    twist_mux = Node(
+        package='twist_mux',
+        executable='twist_mux',
+        parameters=[twist_mux_params, {'use_sim_time': use_sim_time}],
+        remappings=[
+            ('/cmd_vel_out', '/cmd_vel_unstamped'),
+        ],
+        output='screen'
+    )
+
+    stamper = Node(
+        package='twist_stamper',
+        executable='twist_stamper',
+        remappings=[
+            ('/cmd_vel_in', '/cmd_vel_unstamped'),
+            ('/cmd_vel_out', '/rby1_base_controller/cmd_vel')
+        ],
+        output='screen'
+    )
+
+    base_link = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        output='screen',
+        arguments=['0', '0', '0', '0', '0', '0', 'base', 'base_link']
+    )
+
+
+
+    """
+    # Convert TwistStamped to Twist
+    unstamper = Node(
+        package='twist_stamper',
+        executable='twist_unstamper',
+        remappings=[
+            ('/cmd_vel_in', '/key_vel'),  # Input TwistStamped topic 1
+            ('/cmd_vel_out', '/key_vel_unstamped')  # Output Twist topic 1
+        ]
+    )
+    # Multiplex Twist messages
+    twist_mux = Node(
+        package='twist_mux',
+        executable='twist_mux',
+        arguments=[twist_mux_params, {'use_sim_time': use_sim_time}],
+        remappings=[
+            ('/cmd_vel_out', '/muxed/cmd_vel_unstamped'),
+        ],
+    )
+    # Convert multiplexed Twist back to TwistStamped
+    stamper = Node(
+        package='twist_stamper',
+        executable='twist_stamper',
+        remappings=[
+            ('/cmd_vel_in', '/muxed/cmd_vel_unstamped'),
+            ('/cmd_vel_out', '/rby1_base_controller/cmd_vel')
+        ],
+        parameters=[
+            {'frame_id': 'base'}  # Set your desired frame_id
+        ]
+    )
+    """
+
 
     return LaunchDescription([
         DeclareLaunchArgument(name='use_sim_time', default_value='False', description='Flag to enable use_sim_time'),
         slam_node,
+        teleop,
+        unstamper,
+        twist_mux,
+        stamper,
+        base_link,
+        RegisterEventHandler(OnProcessStart(target_action=slam_node,on_start=[TimerAction(period=10.0,actions=[nav2_node])])),
         bringup_module(),
         lakibeam1_module(),
         lidar_merge()

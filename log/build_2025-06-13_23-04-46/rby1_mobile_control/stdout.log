@@ -1,0 +1,35 @@
+running egg_info
+creating ../build/rby1_mobile_control/rby1_mobile_control.egg-info
+writing ../build/rby1_mobile_control/rby1_mobile_control.egg-info/PKG-INFO
+writing dependency_links to ../build/rby1_mobile_control/rby1_mobile_control.egg-info/dependency_links.txt
+writing entry points to ../build/rby1_mobile_control/rby1_mobile_control.egg-info/entry_points.txt
+writing requirements to ../build/rby1_mobile_control/rby1_mobile_control.egg-info/requires.txt
+writing top-level names to ../build/rby1_mobile_control/rby1_mobile_control.egg-info/top_level.txt
+writing manifest file '../build/rby1_mobile_control/rby1_mobile_control.egg-info/SOURCES.txt'
+reading manifest file '../build/rby1_mobile_control/rby1_mobile_control.egg-info/SOURCES.txt'
+writing manifest file '../build/rby1_mobile_control/rby1_mobile_control.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build/lib
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build/lib/rby1_mobile_control
+copying rby1_mobile_control/mobile_publisher.py -> /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build/lib/rby1_mobile_control
+copying rby1_mobile_control/__init__.py -> /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build/lib/rby1_mobile_control
+running install
+running install_lib
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/python3.10/site-packages/rby1_mobile_control
+copying /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build/lib/rby1_mobile_control/mobile_publisher.py -> /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/python3.10/site-packages/rby1_mobile_control
+copying /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/build/lib/rby1_mobile_control/__init__.py -> /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/python3.10/site-packages/rby1_mobile_control
+byte-compiling /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/python3.10/site-packages/rby1_mobile_control/mobile_publisher.py to mobile_publisher.cpython-310.pyc
+byte-compiling /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/python3.10/site-packages/rby1_mobile_control/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/share/ament_index
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/share/ament_index/resource_index
+creating /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/share/ament_index/resource_index/packages
+copying resource/rby1_mobile_control -> /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/share/rby1_mobile_control
+running install_egg_info
+Copying ../build/rby1_mobile_control/rby1_mobile_control.egg-info to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/python3.10/site-packages/rby1_mobile_control-0.0.1-py3.10.egg-info
+running install_scripts
+Installing mobile_publisher script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_mobile_control/lib/rby1_mobile_control
+writing list of installed files to '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_mobile_control/install.log'

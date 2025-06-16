@@ -5,7 +5,7 @@
     <xacro:arg name="robot_ip" default="" />
 
     <!-- Import rby1 urdf file -->
-    <xacro:include filename="$(find rby1_description)/urdf/rby1.urdf" />
+    <xacro:include filename="$(find rby1_description)/urdf/rby1_no_world.urdf" />
 
     <!-- Import control_xacro -->
     <xacro:include filename="$(find rby1_description)/urdf/rby1.ros2_control.xacro" />

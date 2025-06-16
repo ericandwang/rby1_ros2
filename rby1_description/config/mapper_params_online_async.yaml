@@ -16,12 +16,13 @@ slam_toolbox:
     base_frame: base
     scan_topic: /scan
     use_map_saver: true
-    mode: mapping
+    mode: mapping # localization
 
     # if you'd like to immediately start continuing a map at a given pose
     # or at the dock, but they are mutually exclusive, if pose is given
     # will use pose
-    map_file_name: /home/user/rby1_ros2_ws/src/rby1_mrg_description/maps/simple_obstacles_serial
+    # map_file_name: /home/user/rby1_ros2_ws/src/rby1_mrg_description/maps/simple_obstacles_serial
+    map_file_name: /home/nvidia/rby1_ros2_ws/map_1750086126.yaml
     # map_start_pose: [0.0, 0.0, 0.0]
     map_start_at_dock: true
 

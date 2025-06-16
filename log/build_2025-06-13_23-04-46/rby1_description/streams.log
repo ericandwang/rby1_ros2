@@ -1,0 +1,99 @@
+[0.107s] Invoking command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/ros2_ws/install/pynput_teleop_twist_keyboard:/home/nvidia/ros2_ws/install/launch_param_builder:/home/nvidia/ros2_ws/install/keyboard_joy:/home/nvidia/apriltag_py_ros2/install/apriltag_detector:/home/nvidia/rby1_ros2_ws/install/rby1_subscriber_pkg:/home/nvidia/rby1_ros2_ws/install/rby1_mobile_control:/opt/ros/humble /usr/bin/cmake /home/nvidia/rby1_ros2_ws/rby1-ros2/rby1_description -DCMAKE_INSTALL_PREFIX=/home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description
+[0.775s] -- The C compiler identification is GNU 11.4.0
+[0.777s] -- The CXX compiler identification is GNU 11.4.0
+[0.778s] -- Detecting C compiler ABI info
+[0.780s] -- Detecting C compiler ABI info - done
+[0.781s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.781s] -- Detecting C compile features
+[0.781s] -- Detecting C compile features - done
+[0.781s] -- Detecting CXX compiler ABI info
+[0.782s] -- Detecting CXX compiler ABI info - done
+[0.782s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.782s] -- Detecting CXX compile features
+[0.782s] -- Detecting CXX compile features - done
+[0.782s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.782s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.782s]   CMake.
+[0.783s] 
+[0.783s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.783s]   to tell CMake that the project requires at least <min> but has been updated
+[0.783s]   to work with policies introduced by <max> or earlier.
+[0.783s] 
+[0.783s] [0m
+[0.786s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.120s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[1.492s] -- Found xacro: 2.0.13 (/opt/ros/humble/share/xacro/cmake)
+[1.637s] -- Configuring done (1.5s)
+[1.644s] -- Generating done (0.0s)
+[1.646s] -- Build files have been written to: /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description
+[1.657s] Invoked command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/ros2_ws/install/pynput_teleop_twist_keyboard:/home/nvidia/ros2_ws/install/launch_param_builder:/home/nvidia/ros2_ws/install/keyboard_joy:/home/nvidia/apriltag_py_ros2/install/apriltag_detector:/home/nvidia/rby1_ros2_ws/install/rby1_subscriber_pkg:/home/nvidia/rby1_ros2_ws/install/rby1_mobile_control:/opt/ros/humble /usr/bin/cmake /home/nvidia/rby1_ros2_ws/rby1-ros2/rby1_description -DCMAKE_INSTALL_PREFIX=/home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description
+[1.660s] Invoking command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/ros2_ws/install/pynput_teleop_twist_keyboard:/home/nvidia/ros2_ws/install/launch_param_builder:/home/nvidia/ros2_ws/install/keyboard_joy:/home/nvidia/apriltag_py_ros2/install/apriltag_detector:/home/nvidia/rby1_ros2_ws/install/rby1_subscriber_pkg:/home/nvidia/rby1_ros2_ws/install/rby1_mobile_control:/opt/ros/humble /usr/bin/cmake --build /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description -- -j8 -l8
+[1.697s] Invoked command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/ros2_ws/install/pynput_teleop_twist_keyboard:/home/nvidia/ros2_ws/install/launch_param_builder:/home/nvidia/ros2_ws/install/keyboard_joy:/home/nvidia/apriltag_py_ros2/install/apriltag_detector:/home/nvidia/rby1_ros2_ws/install/rby1_subscriber_pkg:/home/nvidia/rby1_ros2_ws/install/rby1_mobile_control:/opt/ros/humble /usr/bin/cmake --build /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description -- -j8 -l8
+[1.710s] Invoking command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/ros2_ws/install/pynput_teleop_twist_keyboard:/home/nvidia/ros2_ws/install/launch_param_builder:/home/nvidia/ros2_ws/install/keyboard_joy:/home/nvidia/apriltag_py_ros2/install/apriltag_detector:/home/nvidia/rby1_ros2_ws/install/rby1_subscriber_pkg:/home/nvidia/rby1_ros2_ws/install/rby1_mobile_control:/opt/ros/humble /usr/bin/cmake --install /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description
+[1.715s] -- Install configuration: ""
+[1.716s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/urdf
+[1.716s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/urdf/rby1.urdf
+[1.716s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/urdf/rby1.urdf.xacro
+[1.716s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/urdf/rby1.ros2_control.xacro
+[1.716s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/urdf/initial_positions.yaml
+[1.717s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes
+[1.717s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_2.dae
+[1.719s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/base.dae
+[1.726s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/FT_SENSOR_R.dae
+[1.737s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_19.dae
+[1.738s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_1.dae
+[1.738s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_15.dae
+[1.739s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_10.dae
+[1.740s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_12.dae
+[1.740s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/WHEEL.dae
+[1.742s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/PAN_TILT_1.dae
+[1.745s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_17.dae
+[1.746s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/EE_FINGER.dae
+[1.746s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/FT_SENSOR_L.dae
+[1.757s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_6.dae
+[1.778s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_9.dae
+[1.779s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/MECANUM_WHEEL_M.dae
+[1.787s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/PAN_TILT_2.dae
+[1.794s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/EE_BODY.dae
+[1.795s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_16.dae
+[1.796s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_18.dae
+[1.797s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/base_m.dae
+[1.800s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_8.dae
+[1.801s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_5.dae
+[1.801s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_20.dae
+[1.804s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_3.dae
+[1.806s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_14.dae
+[1.806s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_11.dae
+[1.807s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_7.dae
+[1.808s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/PAN_TILT_3.dae
+[1.815s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_13.dae
+[1.818s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/LINK_4.dae
+[1.818s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/meshes/MECANUM_WHEEL.dae
+[1.827s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/launch
+[1.827s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/launch/online_async_launch.py
+[1.827s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/launch/nav_rby1.launch.py
+[1.828s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/launch/test.launch.py
+[1.829s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/launch/rby1_state_publisher.launch.py
+[1.829s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/launch/navigation_launch.py
+[1.829s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/config
+[1.829s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/config/mapper_params_online_async.yaml
+[1.829s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/config/twist_mux.yaml
+[1.829s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/config/nav2_params.yaml
+[1.830s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/maps
+[1.830s] -- Up-to-date: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/urdf/initial_positions.yaml
+[1.830s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/ament_index/resource_index/package_run_dependencies/rby1_description
+[1.831s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/ament_index/resource_index/parent_prefix_path/rby1_description
+[1.831s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/environment/ament_prefix_path.sh
+[1.831s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/environment/ament_prefix_path.dsv
+[1.831s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/environment/path.sh
+[1.832s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/environment/path.dsv
+[1.832s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/local_setup.bash
+[1.833s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/local_setup.sh
+[1.833s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/local_setup.zsh
+[1.833s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/local_setup.dsv
+[1.834s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/package.dsv
+[1.834s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/ament_index/resource_index/packages/rby1_description
+[1.834s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/cmake/rby1_descriptionConfig.cmake
+[1.834s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/cmake/rby1_descriptionConfig-version.cmake
+[1.834s] -- Installing: /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_description/share/rby1_description/package.xml
+[1.838s] Invoked command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/ros2_ws/install/pynput_teleop_twist_keyboard:/home/nvidia/ros2_ws/install/launch_param_builder:/home/nvidia/ros2_ws/install/keyboard_joy:/home/nvidia/apriltag_py_ros2/install/apriltag_detector:/home/nvidia/rby1_ros2_ws/install/rby1_subscriber_pkg:/home/nvidia/rby1_ros2_ws/install/rby1_mobile_control:/opt/ros/humble /usr/bin/cmake --install /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_description

@@ -1,0 +1,28 @@
+running egg_info
+writing ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/PKG-INFO
+writing dependency_links to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/dependency_links.txt
+writing entry points to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/entry_points.txt
+writing requirements to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/requires.txt
+writing top-level names to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/top_level.txt
+reading manifest file '../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/SOURCES.txt'
+writing manifest file '../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/python3.10/site-packages/rby1_subscriber_pkg-0.0.1-py3.10.egg-info' (and everything under it)
+Copying ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/python3.10/site-packages/rby1_subscriber_pkg-0.0.1-py3.10.egg-info
+running install_scripts
+Installing 01_dualarm_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 02_wholebody_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 03_torso_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 04_right_arm_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 05_left_arm_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 06_head_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 07_mobile_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing 08_DH_dualarm_control_2 script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing controller_manager_ui script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+Installing sorted_joint_state script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+writing list of installed files to '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/install.log'

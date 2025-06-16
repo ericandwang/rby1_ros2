@@ -1,0 +1,3 @@
+[console_scripts]
+mobile_publisher = rby1_mobile_control.mobile_publisher:main
+

@@ -1,0 +1,30 @@
+[2.264s] Invoking command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/rby1_subscriber_pkg': PYTHONPATH=/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/rby1_subscriber_pkg build --build-base /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/build install --record /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/install.log --single-version-externally-managed install_data
+[2.784s] running egg_info
+[2.785s] writing ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/PKG-INFO
+[2.786s] writing dependency_links to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/dependency_links.txt
+[2.786s] writing entry points to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/entry_points.txt
+[2.787s] writing requirements to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/requires.txt
+[2.787s] writing top-level names to ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/top_level.txt
+[2.791s] reading manifest file '../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/SOURCES.txt'
+[2.793s] writing manifest file '../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info/SOURCES.txt'
+[2.793s] running build
+[2.794s] running build_py
+[2.795s] running install
+[2.795s] running install_lib
+[2.797s] running install_data
+[2.798s] running install_egg_info
+[2.802s] removing '/home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/python3.10/site-packages/rby1_subscriber_pkg-0.0.1-py3.10.egg-info' (and everything under it)
+[2.803s] Copying ../build/rby1_subscriber_pkg/rby1_subscriber_pkg.egg-info to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/python3.10/site-packages/rby1_subscriber_pkg-0.0.1-py3.10.egg-info
+[2.803s] running install_scripts
+[2.845s] Installing 01_dualarm_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.845s] Installing 02_wholebody_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.846s] Installing 03_torso_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.846s] Installing 04_right_arm_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.846s] Installing 05_left_arm_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.846s] Installing 06_head_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.847s] Installing 07_mobile_control script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.847s] Installing 08_DH_dualarm_control_2 script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.847s] Installing controller_manager_ui script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.847s] Installing sorted_joint_state script to /home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/rby1_subscriber_pkg
+[2.848s] writing list of installed files to '/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/install.log'
+[2.913s] Invoked command in '/home/nvidia/rby1_ros2_ws/rby1-ros2/rby1_subscriber_pkg' returned '0': PYTHONPATH=/home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/rby1_ros2_ws/rby1-ros2/install/rby1_subscriber_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/rby1_subscriber_pkg build --build-base /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/build install --record /home/nvidia/rby1_ros2_ws/rby1-ros2/build/rby1_subscriber_pkg/install.log --single-version-externally-managed install_data
