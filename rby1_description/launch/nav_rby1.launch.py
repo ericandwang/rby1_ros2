@@ -73,8 +73,11 @@ def generate_launch_description():
     use_localization = LaunchConfiguration("use_localization")
     ###################
 
-
-
+    declare_lock_arg = DeclareLaunchArgument(
+        'enable_mux',
+        default_value='true',
+        description='Set to true to lock navigation at startup'
+    )
 
     # Note: make sure mode in config file is set to desired behavior: mapping or localization (must provide map)
     #slam_params = os.path.join(get_package_share_directory(package_name),'config','mapper_params_online_async.yaml')
@@ -158,6 +161,7 @@ def generate_launch_description():
     twist_mux = Node(
         package='twist_mux',
         executable='twist_mux',
+        condition=IfCondition(LaunchConfiguration('enable_mux')),
         parameters=[twist_mux_params, {'use_sim_time': use_sim_time}],
         remappings=[
             ('/cmd_vel_out', '/cmd_vel_unstamped'),
@@ -217,9 +221,9 @@ def generate_launch_description():
     )
     """
 
-
     return LaunchDescription([
         DeclareLaunchArgument(name='use_sim_time', default_value='False', description='Flag to enable use_sim_time'),
+        declare_lock_arg,
         slam_node,
         teleop,
         unstamper,
@@ -229,5 +233,5 @@ def generate_launch_description():
         RegisterEventHandler(OnProcessStart(target_action=slam_node,on_start=[TimerAction(period=10.0,actions=[nav2_node])])),
         bringup_module(),
         lakibeam1_module(),
-        lidar_merge()
+        lidar_merge(),
     ])

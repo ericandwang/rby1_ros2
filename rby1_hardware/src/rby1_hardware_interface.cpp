@@ -147,10 +147,17 @@ hardware_interface::return_type RBY1HardwareInterface::read(const rclcpp::Time &
   if (state_copy.position.size() != joint_positions_.size())
     return hardware_interface::return_type::ERROR;
 
-  for (size_t i = 0; i < joint_positions_.size(); ++i) {
-    joint_velocities_[i] = -(state_copy.position(i) - prev_joint_positions_[i]) / period.seconds();
-    prev_joint_positions_[i] = -state_copy.position(i);
-    joint_positions_[i] = -state_copy.position(i);
+  for (size_t i = 0; i < info_.joints.size(); ++i) {
+    const auto& joint = info_.joints[i];
+    if (joint.name == "right_wheel" || joint.name == "left_wheel") {
+      joint_velocities_[i] = -(state_copy.position(i) - prev_joint_positions_[i]) / period.seconds();
+      prev_joint_positions_[i] = -state_copy.position(i);
+      joint_positions_[i] = -state_copy.position(i);
+    } else {
+      joint_velocities_[i] = (state_copy.position(i) - prev_joint_positions_[i]) / period.seconds();
+      prev_joint_positions_[i] = state_copy.position(i);
+      joint_positions_[i] = state_copy.position(i);
+    }
   }
 
   sensor_msgs::msg::JointState js_msg;

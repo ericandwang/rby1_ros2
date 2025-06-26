@@ -18,4 +18,9 @@ twist_mux:
       keyboard:
         topic: cmd_vel_key
         timeout: 0.5
-        priority: 1
+        priority: 10
+    locks:
+      pause_navigation:
+        topic: pause_navigation
+        timeout: 0.0
+        priority: 9
