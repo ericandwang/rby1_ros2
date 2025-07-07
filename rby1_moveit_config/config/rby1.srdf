@@ -16,8 +16,8 @@
         <joint name="right_arm_3"/>
         <joint name="right_arm_4"/>
         <joint name="right_arm_5"/>
-	<joint name="right_arm_6"/>
-	<joint name="ee_right"/>
+        <joint name="right_arm_6"/>
+        <joint name="ee_right"/>
     </group>
     <group name="rby1_left_arm">
         <joint name="left_arm_0"/>
@@ -26,8 +26,8 @@
         <joint name="left_arm_3"/>
         <joint name="left_arm_4"/>
         <joint name="left_arm_5"/>
-	<joint name="left_arm_6"/>
-	<joint name="ee_left"/>
+        <joint name="left_arm_6"/>
+        <joint name="ee_left"/>
     </group>
     <group name="rby1_torso">
         <joint name="torso_0"/>

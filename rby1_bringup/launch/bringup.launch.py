@@ -79,6 +79,13 @@ def generate_launch_description():
     	output='screen'
     )
 
+    head_spawner = Node(
+        package='controller_manager',
+    	executable='spawner',
+    	arguments=['rby1_head_controller'],
+    	output='screen'
+    )
+
     init_base_on_start = Node(
         package='rby1_moveit_client',
         executable='init_base',
@@ -103,7 +110,7 @@ def generate_launch_description():
     controller_event_handler = RegisterEventHandler(
         OnProcessStart(
             target_action=ros2_control_node,
-            on_start=[left_arm_spawner, right_arm_spawner, base_spawner]
+            on_start=[left_arm_spawner, right_arm_spawner, base_spawner, head_spawner]
         )
     )
 
